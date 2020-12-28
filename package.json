@@ -1,0 +1,51 @@
+{
+  "__npminstall_done": "Sat Jul 04 2020 15:01:26 GMT+0800 (GMT+08:00)",
+  "_spec": "3d-tiles-renderer-modify",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-jest": "^25.4.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-mdcs": "^4.2.3",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.4.0",
+    "jest-cli": "^25.4.0",
+    "parcel-bundler": "^1.12.4",
+    "static-server": "^2.2.1",
+    "three": ">=0.114.0",
+    "typescript": "^3.7.4"
+  },
+  "files": [
+    "src/*"
+  ],
+  "keywords": [
+    "3d-tiles",
+    "3dtiles",
+    "graphics",
+    "b3dm",
+    "gltf",
+    "threejs",
+    "rendering",
+    "geometry",
+    "terrain",
+    "cesium"
+  ],
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "name": "3d-tiles-renderer-modify",
+  "peerDependencies": {
+    "three": ">=0.114.0"
+  },
+  "scripts": {
+    "lint": "eslint src/**.js && tsc -p tsconfig.json --noEmit",
+    "start": "concurrently \"parcel watch example/*.html --out-dir ./example/bundle/ --public-url . --no-cache\" \"static-server\"",
+    "test": "jest"
+  },
+  "type": "module",
+  "version": "0.2.4",
+  "dependencies": {}
+}
