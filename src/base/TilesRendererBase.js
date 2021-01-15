@@ -124,9 +124,9 @@ export class TilesRendererBase {
 		determineFrustumSet( root, this );
 		markUsedSetLeaves( root, this );
 		skipTraversal( root, this );
-		toggleTiles( root, this );
-
-		// console.log('visibleTiles: ', this.visibleTiles)
+		if (!this.lockTiles) {
+			toggleTiles( root, this );
+		}
 
 		lruCache.scheduleUnload();
 
