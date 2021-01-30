@@ -69,7 +69,10 @@ export class TilesRendererBase {
 		this.loadSiblings = true;
 		this.displayActiveTiles = false;
 		this.maxDepth = Infinity;
+
 		this.lockTiles = false;
+		this.lockTileDownload = false;
+		this.lockTileLoad = false;
 
 		// 超时的毫秒数
 		this.expireTime = 4000;
@@ -124,7 +127,7 @@ export class TilesRendererBase {
 		determineFrustumSet( root, this );
 		markUsedSetLeaves( root, this );
 		skipTraversal( root, this );
-		if (!this.lockTiles) {
+		if (!this.lockTileLoad) {
 			toggleTiles( root, this );
 		}
 
@@ -289,7 +292,7 @@ export class TilesRendererBase {
 
 		// If the tile is already being loaded then don't
 		// start it again.
-		if ( tile.__loadingState !== UNLOADED || this.lockTiles) {
+		if ( tile.__loadingState !== UNLOADED || this.lockTileDownload) {
 
 			return;
 

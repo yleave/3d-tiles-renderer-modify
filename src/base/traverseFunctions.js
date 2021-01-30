@@ -357,6 +357,7 @@ export function toggleTiles( tile, renderer ) {
 
 	const frameCount = renderer.frameCount;
 	const lockTiles = renderer.lockTiles;
+	const lockTileLoad = renderer.lockTileLoad;
 
 	const isUsed = isUsedThisFrame( tile, frameCount );
 	if ( isUsed || tile.__usedLastFrame ) {
@@ -380,7 +381,7 @@ export function toggleTiles( tile, renderer ) {
 		}
 
 		// If the active or visible state changed then call the functions.
-		if ( ! tile.__contentEmpty && tile.__loadingState === LOADED && !lockTiles) {
+		if ( ! tile.__contentEmpty && tile.__loadingState === LOADED && !lockTileLoad) {
 
 			if ( tile.__wasSetActive !== setActive ) {
 
